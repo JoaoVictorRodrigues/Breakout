@@ -12,9 +12,9 @@ public class FimDeJogo : MonoBehaviour
         gm = GameManager.GetInstance();
 
         if(gm.vidas > 0){
-            message.text = "Você Ganhou";
+            message.text = "Você Ganhou !!!";
         }else{
-            message.text = "Você Perdeu";
+            message.text = "Você Perdeu :/";
         }
     }
 

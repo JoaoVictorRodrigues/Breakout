@@ -22,7 +22,6 @@ public class MovimentoBola : MonoBehaviour
         gm = GameManager.GetInstance();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -31,13 +30,13 @@ public class MovimentoBola : MonoBehaviour
 
         Vector2 posicaoViewport = Camera.main.WorldToViewportPoint(transform.position);
 
-        if(posicaoViewport.x < 0 || posicaoViewport.x > 1){
+       /* if(posicaoViewport.x < 0 || posicaoViewport.x > 1){
             direcao = new Vector3(-direcao.x,direcao.y);
         }
 
         if(posicaoViewport.y > 1){
             direcao = new Vector3(direcao.x,-direcao.y);
-        }
+        }*/
         if(posicaoViewport.y < 0 ){
             Reset();
         }
@@ -76,6 +75,10 @@ public class MovimentoBola : MonoBehaviour
             direcao = new Vector3(direcao.x, -direcao.y);
             gm.pontos++;
 
+        }
+
+        else if(col.gameObject.CompareTag("Parede")){
+                direcao = new Vector3(-direcao.x, direcao.y);
         }
 
     }

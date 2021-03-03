@@ -21,9 +21,9 @@ public class BlocoSpawner : MonoBehaviour
             foreach (Transform child in transform){
                 GameObject.Destroy(child.gameObject);
             }
-            for(int i=0; i<12; i++){
+            for(int i=0; i<10; i++){
                 for(int j=0; j<4; j++){
-                    Vector3 posicao = new Vector3(-9 + 1.55f * i, 4 - 0.55f * j);
+                    Vector3 posicao = new Vector3(-6.5f + 1.45f * i, 4 - 0.55f * j);
                     GameObject blk = Instantiate(Bloco, posicao, Quaternion.identity, transform) as GameObject;
                     blk.GetComponent <SpriteRenderer> ().color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), 1f);
                      
